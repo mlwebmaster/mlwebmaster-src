@@ -1,0 +1,245 @@
+/* HEADER */
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: all 0.3s ease 0s;
+	//border-bottom: 1px solid $greenColor;
+	@include adaptiveValue("padding-top", 60, 10);
+	@include adaptiveValue("padding-bottom", 60, 10);
+	z-index: 50;
+
+	&._header-scroll {
+		padding-top: rem(20);
+		padding-bottom: rem(20);
+		background-color: rgba(0, 0, 0, 0.8);
+
+		.light & {
+			background-color: rgba(238, 238, 238, 0.8);
+		}
+	}
+
+	// .header__container-big
+	&__container-big {
+		display: flex;
+		align-items: center;
+
+		@media (max-width:$mobile) {
+			position: relative;
+			z-index: 8;
+		}
+	}
+
+	// .header__logo
+	&__logo {
+		position: relative;
+		font-family: 'Lato';
+		font-weight: 500;
+		@include adaptiveValue("font-size", 36, 25);
+		line-height: math.div(43, 36);
+		white-space: nowrap;
+
+		& span {
+			color: $greenColor;
+		}
+	}
+
+	// .header__menu
+	&__menu {
+		flex: 1 1 auto;
+	}
+
+	// .header__actions
+	&__actions {
+		display: flex;
+		gap: rem(16);
+
+		@media (max-width: em(720)) {
+			flex-direction: column;
+			justify-content: center;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			@include adaptiveValue("padding-left", 370, 10);
+			@include adaptiveValue("padding-right", 370, 10);
+
+			//align-items: center;
+		}
+	}
+
+	// .header__button
+	&__button {
+		@media (max-width: em(720)) {}
+
+	}
+
+	// .header__theme
+	&__theme {
+		width: 30px;
+		height: 30px;
+		flex: 0 0 30px;
+		margin-left: rem(15);
+		cursor: pointer;
+	}
+
+	// .header__reset
+	/*    &__reset {
+
+   } */
+	// .header__menu-second
+	&__menu-second {
+		transition: top 0.5s ease 0s;
+
+		@media (max-width: rem(1100)) {
+			padding-top: rem(20);
+		}
+
+		@media (max-width: $mobile) {
+			position: fixed;
+			top: -100%;
+			@include adaptiveValue("padding-top", 140, 84);
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			.light & {
+				background-color: $mainColor;
+			}
+
+			.dark & {
+				background-color: $darkBgColor;
+			}
+
+			overflow: auto;
+
+			/* Класс .menu-open появляется при клике на бургер в теге html */
+			.menu-open & {
+				top: 0;
+			}
+		}
+	}
+}
+
+.dark .header__theme {
+	background: url('@img/header/sun.svg') 0 0 / 100% no-repeat;
+}
+
+.light .header__theme {
+	background: url('@img/header/moon.svg') 0 0 / 100% no-repeat;
+}
+
+.menu {
+	padding: 0 rem(10);
+
+	// .menu__body
+	&__body {
+		@media (max-width:$mobile) {
+			padding-top: 20px;
+		}
+	}
+
+	// .menu__list
+	&__list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		row-gap: rem(10);
+		@include adaptiveValue("column-gap", 44, 10);
+		flex-wrap: wrap;
+
+		@media (max-width:$mobile) {
+			flex-direction: column;
+		}
+	}
+
+	// .menu__item
+	&__item {
+		white-space: nowrap;
+	}
+
+	// .menu__link
+	&__link {
+		transition: color 0.3s ease 0s;
+
+		@media (max-width:$mobile) {
+			font-size: 25px;
+		}
+	}
+
+	&__link:hover {
+		color: $greenColor;
+	}
+}
+
+
+//====================================================================================================
+
+//Burger
+.light .icon-menu {
+	@media (max-width: $mobile) {
+
+		span,
+		&::before,
+		&::after {
+			background-color: $darkBgColor;
+		}
+	}
+}
+
+.icon-menu {
+	display: none;
+
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		margin-left: rem(15);
+		cursor: pointer;
+		z-index: 5;
+
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: $mainColor;
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+
+		span {
+			top: calc(50% - rem(1));
+		}
+
+		.menu-open & {
+			span {
+				width: 0;
+			}
+
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+// ------------Тренировка ---------------
+
+

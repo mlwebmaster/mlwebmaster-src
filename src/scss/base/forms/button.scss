@@ -1,0 +1,53 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.button {
+   font-family: Lato;
+   font-weight: 500;
+   display: inline-block;
+   line-height: math.div(22, 18);
+   color: $mainColor;
+   @include adaptiveValue("padding-top", 21, 15);
+   @include adaptiveValue("padding-bottom", 21, 15);
+   @include adaptiveValue("padding-left", 25, 15);
+   @include adaptiveValue("padding-right", 25, 15);
+   background-color: $greenColor;
+   border-radius: rem(10);
+   transition: all 0.3s ease 0s;
+   white-space: nowrap;
+   @media (max-width: em(720)){
+      font-size: 24px;
+   }
+	@media (any-hover: hover) {
+		&:hover {
+         background-color: $greenHoverColor;
+		}
+	}
+   &-border {
+      background-color: transparent;
+      html.dark & {
+         border: 1px solid $mainColor;
+      }
+      html.light & {
+         color: $darkBgColor;
+         border: 1px solid $darkBgColor;
+      }
+      @media (any-hover: hover) {
+         html.dark &:hover {
+            border: 1px solid $greenColor;
+            color: $greenColor;
+            background-color: $darkHoverColor;
+         }
+         html.light &:hover {
+            border: 1px solid $greenColor;
+            color: $greenColor;
+            background-color: $lightHoverColor;
+         }
+      }
+   }
+	&._fw {
+		width: 100%;
+	}
+}
+
+

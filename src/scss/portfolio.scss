@@ -1,0 +1,55 @@
+/* PORTFOLIO */
+.portfolio {
+   @include adaptiveValue("padding-top", 100, 25);
+   @include adaptiveValue("padding-bottom", 100, 25);
+   // .portfolio__title
+   &__title {
+      text-align: center;
+   }
+   // .portfolio__text
+   &__text {
+      text-align: center;
+   }
+   // .portfolio__image
+   &__image {
+      @include adaptiveValue("padding-top", 80, 30);
+      @include adaptiveValue("padding-bottom", 80, 30);
+      .image-block__circle-1 {
+         &::before {
+            transform: translate(calc(50% - rem(18)), -30%);
+         }
+      }
+      .image-block__circle-2 {
+         &::before {
+            transform: translate(calc(50% - rem(18)), -16%);
+         }
+      }
+   }
+   // .portfolio__button
+   &__button {
+      display: flex;
+      justify-content: center;
+      padding: 50px 0;
+   }
+}
+.button-portfolio-link {
+   font-family: Lato;
+   font-weight: 500;
+   display: inline-block;
+   line-height: math.div(22, 18);
+   color: $mainColor;
+   @include adaptiveValue("padding-top", 21, 15);
+   @include adaptiveValue("padding-bottom", 21, 15);
+   @include adaptiveValue("padding-left", 25, 15);
+   @include adaptiveValue("padding-right", 25, 15);
+   background-color: $greenColor;
+   border-radius: rem(10);
+   transition: all 0.3s ease 0s;
+   white-space: nowrap;
+   @media (any-hover: hover) {
+		&:hover {
+         background-color: $greenHoverColor;
+		}
+	}
+}
+

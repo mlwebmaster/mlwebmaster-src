@@ -1,0 +1,193 @@
+/* FOOTER */
+.footer {
+   @include adaptiveValue("margin-top", 100, 25);
+   background: $greyBgColor;
+   .light & {
+      background: $lightFooterBgColor;
+   }
+   // .footer__main
+   &__main {
+      @include adaptiveValue("padding-top", 68, 30);
+      @include adaptiveValue("padding-bottom", 100, 30);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+      .light & {
+         border-bottom: 1px solid $lineBgColor;
+      }
+   }
+   // .footer__bottom
+   &__bottom {
+      @include adaptiveValue("padding-top", 55, 30);
+      @include adaptiveValue("padding-bottom", 55, 30);
+   }
+}
+.main-footer {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   column-gap: rem(20);
+   row-gap: rem(40);
+   @media (max-width:$tablet){
+      grid-template-columns: repeat(2, 1fr);
+   }
+   @media (max-width:$mobileSmall){
+      grid-template-columns: 1fr;
+   }
+   // .main-footer__info
+   &__info {
+      max-width: rem(330);
+      @media (max-width:$tablet){
+         order: 1;
+      }
+   }
+   // .main-footer__logo
+   &__logo {
+      display: inline-block;
+      font-family: 'Lato';
+      font-weight: 500;
+      @include adaptiveValue("font-size", 25, 15);
+      line-height: math.div(33, 25);
+      white-space: nowrap;
+      & span {
+         color: $greenColor;
+      }
+      &:not(:last-child) {
+      margin-bottom: rem(24);
+      }
+   }
+   // .main-footer__form
+   &__form {
+      justify-self: center;
+      @media (max-width:$tablet){
+         order: 3;
+      }
+      @media (max-width:$tablet) and (min-width:$mobileSmall) {      
+         grid-column: span 2;
+      }
+   }
+   // .main-footer__contacts
+   &__contacts {
+      display: flex;
+      @include adaptiveValue("gap", 48, 20);
+      @media (max-width: em(1150)){
+        flex-direction: column;
+      }
+      @media (max-width:$tablet){
+         order: 2;
+      }
+      @media (min-width:$mobileSmall){
+         justify-self: end;
+      }
+   }
+}
+.form-main {
+   // .form-main__text
+   &__text {
+      display: inline-block;
+      max-width: rem(370);
+   }
+}
+.social-footer {
+   // .social-footer__label
+   &__label {
+      font-size: rem(16);
+      font-weight: 700;
+      white-space: nowrap;
+      &:not(:last-child) {
+         margin-bottom: rem(24);
+      }
+   }
+   // .social-footer__items
+   &__items {
+      display: flex;
+      gap: rem(16);
+   }
+   // .social-footer__item
+   &__item {
+      flex: 0 0 rem(48);
+      width: rem(48);
+      height: rem(48);
+      border-radius: 50%;
+      background: $mainColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.3s ease 0s;
+      @media (any-hover: hover){
+         &:hover{
+            background: $lightHoverColor;
+         }
+      }
+      .light & {
+         background: $greenColor;
+         @media (any-hover: hover){
+            &:hover{
+               background: $greenHoverColor;
+            }
+         }
+      }
+   }
+}
+.items-dark {
+   .light & {
+      display: none;
+   }
+}
+.items-light {
+   .dark & {
+      display: none;
+   }
+}
+.call-us-footer {
+   // .call-us-footer__label
+   &__label {
+      font-size: rem(16);
+      font-weight: 700;
+      white-space: nowrap;
+      &:not(:last-child) {
+         margin-bottom: rem(24);
+      }
+   }
+   // .call-us-footer__phone
+   &__phone {
+      @media (any-hover: hover){
+         &:hover{
+            color: $greenColor;
+         }
+      }
+   }
+}
+.bottom-footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: rem(30);
+   @media (max-width:$mobile){
+       flex-direction: column-reverse; 
+   }
+   // .bottom-footer__copy
+   &__copy {
+      font-size: rem(12);
+      line-height: math.div(14, 12);
+   }
+}
+.menu-footer {
+   // .menu-footer__list
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      @include adaptiveValue("gap", 40, 15);
+   }
+   // .menu-footer__link
+   &__link {
+      font-size: rem(14);
+      line-height: math.div(16, 14);
+      transition: color 0.3s ease 0s;
+      white-space: nowrap;
+      @media (any-hover: hover){
+         &:hover{
+            color: $greenHoverColor;
+         }
+      }
+   }
+}
+
