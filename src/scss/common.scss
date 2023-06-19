@@ -1,26 +1,5 @@
 // Заголовки, общие БЄМ блоки и проче...
 
-/* .page {
-   // .page__main
-   &__main {
-   }
-   // .page__skills
-   &__skills {
-   }
-   // .page__advantage
-   &__advantage {
-   }
-   // .page__portfolio
-   &__portfolio {
-   }
-   // .page__pathway
-	&__questions {
-	}
-   // .page__my-prof-skills
-   &__my-prof-skills {
-   }
-} */
-
 .title {
    font-weight: 500;
    line-height: math.div(78, 70);
@@ -31,6 +10,10 @@
       &:not(:last-child) {
          @include adaptiveValue("margin-bottom", 30, 25);
       }
+		span {
+			color: $greenColor;
+			white-space: nowrap;
+		}
    }
    // .title_h3
    &-h3 {

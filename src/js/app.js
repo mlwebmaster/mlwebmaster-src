@@ -171,13 +171,13 @@ import './libs/parallax.js';
 // Функции работы скроллом
 import * as flsScroll from './files/scroll/scroll.js';
 
-// Функционал добавления классов к хедеру при прокрутке
-// Документация: https://template.fls.guru/template-docs/modul-dobavleniya-klassov-k-shapke-pri-prokrutke-stranicy.html
-flsScroll.headerScroll();
-
 // Плавная навигация по странице
 // Документация: https://template.fls.guru/template-docs/modul-plavnoj-navigacii-po-stranice.html
 flsScroll.pageNavigation();
+
+// Функционал добавления классов к хедеру при прокрутке
+// Документация: https://template.fls.guru/template-docs/modul-dobavleniya-klassov-k-shapke-pri-prokrutke-stranicy.html
+flsScroll.headerScroll();
 
 // Функционал липкого блока
 // flsScroll.stickyBlock(); 
