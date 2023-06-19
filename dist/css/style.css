@@ -133,11 +133,6 @@ html.dark body {
   color: #ffffff;
 }
 
-body {
-  /* .loaded & {
-  } */
-}
-
 .lock body {
   overflow: hidden;
   -ms-touch-action: none;
@@ -959,7 +954,7 @@ html.light .button-border {
 .main-footer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
+  -ms-grid-columns: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
   -webkit-column-gap: 1.25rem;
      -moz-column-gap: 1.25rem;
@@ -1676,7 +1671,6 @@ button.swiper-pagination-bullet {
 .swiper-scrollbar {
   border-radius: 10px;
   position: relative;
-  -ms-touch-action: none;
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -2554,7 +2548,7 @@ button.swiper-pagination-bullet {
   }
 
   .main-footer {
-    -ms-grid-columns: (1fr)[2];
+    -ms-grid-columns: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
   }
 
