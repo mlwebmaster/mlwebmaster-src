@@ -1,3 +1,4 @@
+/* popup */
 body::after {
 	content: "";
 	background-color: rgba(0, 0, 0, 0.5);
@@ -47,6 +48,7 @@ body::after {
 	align-items: center;
 }
 .popup__content {
+	position: relative;
 	visibility: hidden;
 	transform: scale(0);
 	transition: transform 0.3s ease 0s;
@@ -58,4 +60,45 @@ body::after {
 	.lock & {
 		visibility: visible;
 	}
+}
+.popup__close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: rem(30);
+	height: rem(18);
+	margin-left: rem(15);
+	cursor: pointer;
+	z-index: 5;
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: $greenColor;
+		}
+		&::before {
+			top: calc(50% - rem(1));
+			transform: rotate(-45deg);
+		}
+
+		&::after {
+			bottom: calc(50% - rem(1));
+			transform: rotate(45deg);
+		}
+}
+.popup__title {
+	color: $greenColor;
+}
+.popup__text {
+	color: $darkText;
+   @include adaptiveValue("font-size", 18, 16);
+   line-height: 180%;
+   font-weight: 300;
+   &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 48, 30);
+   }
 }

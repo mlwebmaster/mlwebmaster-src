@@ -1,0 +1,13 @@
+/* popup1 */
+.popup1-content {
+	max-width: 90%;
+}
+.popup1__list {
+	margin-left: 30px;
+}
+.popup1__subtitle {
+	font-weight: 400;
+   line-height: math.div(78, 70);
+   @include adaptiveValue("font-size", 40, 20);
+	@include adaptiveValue("margin-bottom", 30, 25);
+}

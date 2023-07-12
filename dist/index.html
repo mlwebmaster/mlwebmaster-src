@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230706212406">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230712204803">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,34 +16,37 @@
 	<div class="wrapper">
 		<!-- HEADER -->
 		<header class="header">
-			<div class="header__container-big">
-				<a href="#" class="header__logo"><span>ML</span> Webmaster</a>
-				<div class="header__menu menu">
-					<nav data-da=".header__menu-second,1100" class="menu__body">
-						<ul class="menu__list">
-							<li class="menu__item"><a href="index.html" class="menu__link">Головна</a></li>
-							<li class="menu__item"><a href="#!" data-goto-header data-goto=".advantage" class="menu__link">Ваші
-									вигоди</a></li>
-							<li class="menu__item"><a href="#!" data-goto-header data-goto=".portfolio" class="menu__link">Мої
-									роботи</a></li>
-							<li class="menu__item"><a href="#!" data-goto-header data-goto=".questions" class="menu__link">Поширенні
-									запитання</a></li>
-							<li class="menu__item"><a href="#!" data-goto-header data-goto=".my-prof-skills" class="menu__link">Мої
-									навички</a></li>
-							<li class="menu__item"><a href="#!" data-goto-header data-goto=".reviews" class="menu__link">Відгуки</a>
-							</li>
-							<li class="menu__item"><a href="#!" data-goto-header data-goto=".footer" class="menu__link">Контакти</a>
-							</li>
-						</ul>
-					</nav>
+			<div data-lp class="header__wrapper-big">
+				<div class="header__container-big">
+					<a href="#" class="header__logo"><span>ML</span> Webmaster</a>
+					<div class="header__menu menu">
+						<nav data-da=".header__menu-second,1100" class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="index.html" class="menu__link">Головна</a></li>
+								<li class="menu__item"><a href="#!" data-goto-header data-goto=".advantage" class="menu__link">Ваші
+										вигоди</a></li>
+								<li class="menu__item"><a href="#!" data-goto-header data-goto=".portfolio" class="menu__link">Мої
+										роботи</a></li>
+								<li class="menu__item"><a href="#!" data-goto-header data-goto=".questions" class="menu__link">Поширенні
+										запитання</a></li>
+								<li class="menu__item"><a href="#!" data-goto-header data-goto=".my-prof-skills" class="menu__link">Мої
+										навички</a></li>
+								<li class="menu__item"><a href="#!" data-goto-header data-goto=".reviews" class="menu__link">Відгуки</a>
+								</li>
+								<li class="menu__item"><a href="#!" data-goto-header data-goto=".footer" class="menu__link">Контакти</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div data-da=".header__menu-second,720" class="header__actions">
+						<button data-popup="#popup1" type="button" class="header__button button button-border">Подивитись
+							ціни</button>
+						<button data-popup="#popup2" type="button" class="header__button button">Зворотний дзвінок</button>
+					</div>
+					<button type="button" class="header__theme"></button>
+					<button type="button" class="header__reset"></button>
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
 				</div>
-				<div data-da=".header__menu-second,720" class="header__actions">
-					<button type="button" class="header__button button button-border">Подивитись ціни</button>
-					<button type="button" class="header__button button">Зворотний дзвінок</button>
-				</div>
-				<button type="button" class="header__theme"></button>
-				<button type="button" class="header__reset"></button>
-				<button type="button" class="menu__icon icon-menu"><span></span></button>
 			</div>
 			<div class="header__container">
 				<div class="header__menu-second"></div>
@@ -224,7 +227,7 @@
 				</div>
 			</section>
 			<!-- PORTFOLIO -->
-			<section class="page__portfolio portfolio">
+			<section data-watch="navigator" class="page__portfolio portfolio">
 				<div class="portfolio__container-big">
 					<div class="portfolio__container">
 						<div class="portfolio__body">
@@ -590,17 +593,38 @@
 			</div>
 		</footer>
 	</div>
-	<!-- <div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-				Text
+	<!-- popup1 -->
+	<div id="popup1" aria-hidden="true" class="popup popup1">
+		<div class="popup__wrapper popup1-wrapper">
+			<div class="popup__content popup1-content">
+				<button data-close type="button" class="popup__close"></button>
+				<h2 class="popup__title title-h2">Ціни на верстку сайта</h2>
+				<div class="popup__text popup1-text">
+					<div class="popup1__subtitle">Оцінка верстки сайта залежеть від кількох чинників:</div>
+					<ol class="popup1__list">
+						<li class="popup1__item">Кількість сторінок на сайті</li>
+						<li class="popup1__item">Кількість екранів на сторінці</li>
+						<li class="popup1__item">Кількість форм</li>
+						<li class="popup1__item">Кількість слайдерів</li>
+						<li class="popup1__item">Наявність анімації</li>
+					</ol>
+				</div>
 			</div>
 		</div>
 	</div>
-</div> -->
-	<script src="js/app.min.js?_v=20230706212406"></script>
+	<!-- popup2 -->
+	<div id="popup2" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<h2 class="popup__title title-h2">Title popup 2</h2>
+				<div class="popup__text">
+					Text
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230712204803"></script>
 </body>
 
 </html>
